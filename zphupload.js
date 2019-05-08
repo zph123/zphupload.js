@@ -31,7 +31,7 @@ box.addEventListener("drop",function(e){
     var fileurl = window.URL.createObjectURL(fileList[0]);     
     console.log(fileList[0].type)           
     if(fileList[0].type.indexOf('image') === 0){  //如果是图片  
-        var str="<img width='200px' height='200px' src='"+fileurl+"'>";  
+        var str="<img width='100%' height='100%' src='"+fileurl+"'>";  
         document.getElementById('drop_area').innerHTML=str;                   
     }else if(fileList[0].type=='audio/mp3'){  //如果是mp3  
     	console.log('mp3')
@@ -39,7 +39,7 @@ box.addEventListener("drop",function(e){
         document.getElementById('drop_area').innerHTML=str;
 
     }else if(video_type.in_array(fileList[0].type)){   //如果是规定格式内的视频                    
-        var str="<video width='200px' height='200px' controls='controls' src='"+fileurl+"'></video>";  
+        var str="<video width='100%' height='100%' controls='controls' src='"+fileurl+"'></video>";  
         document.getElementById('drop_area').innerHTML=str;        
     }else{ //其他格式，输出文件名  
         //alert("不预览");  
